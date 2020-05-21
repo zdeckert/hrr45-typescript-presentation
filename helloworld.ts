@@ -1,1 +1,4 @@
-console.log("hellow world")
+
+const greeting = (name: string): void => {
+  console.log(`Hello, ${name}`)
+}

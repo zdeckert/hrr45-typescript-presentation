@@ -1,6 +1,12 @@
-// Basic Types
-  let variableName: type;
+// Type decloration
+  // implicit
+  let life = 42
 
+  //explicit
+  let happiness:string
+  happiness = 'cupcakes'
+
+// Basic Types
   // Boolean
   let isEqual: boolean = false;
 
@@ -69,4 +75,82 @@
     let thisValue: any = "this is a string";
     let thisStrLength: number = (thisValue as string).length;
 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
+// Typing with functions
+
+function sum(x, y) {
+  return x + y
+}
+
+sum('cat', 'dog')
+
+// function sum(x: number, y:number): number {
+//   return x + y
+// }
+
+// sum('cat', 'dog')
+
+let count = 0;
+
+function incrementCount(): void {
+  count += 1;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+// Typing with classes/ interfaces
+  //an interface declares the shape you expect an object to be
+
+  interface Person {
+    first: string,
+    last: string,
+    id: number,
+    // [key: string]: any
+  }
+
+  const person1: Person = {
+    first: 'Zeke',
+    last: 'Deckert',
+    id: 1
+  }
+
+  const person2: Person = {
+    first: 'Jack',
+    last: 'Black',
+    id: 2,
+    // bodacious: true
+  }
+
+  // Properties can be marked optional with ?
+  interface UserAccount {
+    username: string,
+    first: string,
+    mi?: string,
+    last: string,
+    id: number,
+    phonenumber?: number,
+    email?: string
+  }
+
+  const myaccount: UserAccount = {
+    username: 'zdeckert',
+    first: 'Zeke',
+    last: 'Deckert',
+    id: 1,
+    email: 'zdeckert@email.com'
+  }
+
+  //properties can be marked as readonly
+
+  interface Point {
+    readonly x: number;
+    readonly y: number;
+  }
+
+  const midpoint: Point = {
+    x: 7,
+    y: -8
+  }
+
+  midpoint.x = 17;
